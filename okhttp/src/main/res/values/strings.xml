@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">okhttp</string>
+    <string name="download_size_b">%dB/%dB</string>
+    <string name="download_size_kb">%.1fKB/%.1fKB</string>
+    <string name="stop">stop</string>
+    <string name="start">start</string>
+    <string name="delete_file">delete file</string>
+    <string name="upload">upload</string>
+</resources>

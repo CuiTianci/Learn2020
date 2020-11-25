@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDevices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <Button
+        android:id="@+id/enableBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="enable bt"
+        app:layout_constraintBottom_toTopOf="@id/getBonded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/getBonded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get bonded"
+        app:layout_constraintBottom_toTopOf="@id/registerReceiver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enableBt" />
+
+    <Button
+        android:id="@+id/registerReceiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="register Receiver"
+        app:layout_constraintBottom_toTopOf="@id/startDiscover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/getBonded" />
+
+    <Button
+        android:id="@+id/startDiscover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start discover"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerReceiver" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:text="play music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

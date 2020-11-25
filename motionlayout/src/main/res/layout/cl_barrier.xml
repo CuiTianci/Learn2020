@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clBarrierShell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <br.tiagohm.markdownview.MarkdownView
+        android:id="@+id/barrierMd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--主体部分，外层为辅助-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#33F6F205"
+        app:layout_constraintTop_toBottomOf="@id/barrierMd">
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvT"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/teal_200"
+            app:layout_constraintEnd_toStartOf="@id/barrier" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvA"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:barrierAllowsGoneWidgets="false"
+            app:constraint_referenced_ids="mvA,mvB" />
+
+        <View
+            android:id="@+id/vFakeBarrier"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            app:layout_constraintEnd_toEndOf="@id/barrier" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvB"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvWidthOfA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/width_of_a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/swWidthOfA"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:progress="100"
+        app:layout_constraintBottom_toBottomOf="@id/tvWidthOfA"
+        app:layout_constraintStart_toEndOf="@id/tvWidthOfA"
+        app:layout_constraintTop_toTopOf="@id/tvWidthOfA" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Transition
+        android:id="@+id/abc"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:touchRegionId="@id/pic" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="90"
+                app:motionTarget="@id/pic"
+                app:keyPositionType="deltaRelative"
+                app:percentX="0"
+                app:percentY="0.9"
+                app:percentWidth="0"/>
+            <KeyPosition
+                app:framePosition="90"
+                app:motionTarget="@id/bg"
+                app:keyPositionType="deltaRelative"
+                app:percentX="0"
+                app:percentY="0.9"
+                app:percentWidth="0"/>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/bottomNav">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </Constraint>
+        <Constraint android:id="@id/bg">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/bottomNav"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </Constraint>
+        <Constraint android:id="@id/pic">
+            <Layout
+                android:layout_width="80dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="14dp"
+                app:layout_constraintTop_toTopOf="@id/bg"
+                app:layout_constraintBottom_toBottomOf="@id/bg"
+                app:layout_constraintStart_toStartOf="@id/bg" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/play">
+            <PropertySet
+                android:visibility="visible"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/xx">
+            <PropertySet
+                android:visibility="visible"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/sv">
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+
+    </ConstraintSet>
+</MotionScene>

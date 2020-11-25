@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BackgroundLaunch</string>
+    <string name="x_second">%d seconds</string>
+</resources>

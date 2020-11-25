@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WorkMaterialEditText">
+        <attr name="userFloatingHint" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="MaterialEditText">
+        <attr name="userFloatingLabel" format="boolean" />
+    </declare-styleable>
+</resources>

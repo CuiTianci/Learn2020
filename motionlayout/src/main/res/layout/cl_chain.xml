@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clChainShell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <br.tiagohm.markdownview.MarkdownView
+        android:id="@+id/chain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--主体部分，外层为辅助-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clChain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#33F6F205"
+        app:layout_constraintBottom_toBottomOf="@id/rgChainStyle"
+        app:layout_constraintEnd_toStartOf="@id/rgChainStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rgChainStyle">
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvA"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mvB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvB"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mvC"
+            app:layout_constraintStart_toEndOf="@id/mvA"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvC"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mvB"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/rgChainStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chain">
+
+
+        <RadioButton
+            android:id="@+id/rbSpread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spread"
+            app:layout_constraintBottom_toTopOf="@id/cbEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chain" />
+
+        <RadioButton
+            android:id="@+id/rbSpreadInside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spreadInside"
+            app:layout_constraintBottom_toTopOf="@id/cbTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cbStart" />
+
+        <RadioButton
+            android:id="@+id/rbPacked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/packed"
+            app:layout_constraintBottom_toTopOf="@id/cbBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cbEnd" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

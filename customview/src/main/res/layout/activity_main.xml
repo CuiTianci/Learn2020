@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.example.customview.ShakeImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tzl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- <com.example.customview.touch.MultiTouchView3
+         android:id="@+id/ttt"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>-->
+
+
+    <!--<TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="河北省"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="湖南省"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="河南省"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="海南省"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津市"/>
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京"/>
+
+    <com.example.customview.layout.ColoredTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="台湾省"/>-->
+
+    <!--<EditText
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#30000000"
+        app:layout_constraintBottom_toBottomOf="@id/test"
+        app:layout_constraintTop_toTopOf="@id/test" />
+
+    <com.example.customview.draw.WorkMaterialEditText
+        android:id="@+id/view"
+        android:hint="username"
+        app:userFloatingHint="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#30ff0000"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

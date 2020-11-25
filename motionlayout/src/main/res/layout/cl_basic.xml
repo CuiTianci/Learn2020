@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clBasicShell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <br.tiagohm.markdownview.MarkdownView
+        android:id="@+id/basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--主体部分，外层为辅助-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBasic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#33F6F205"
+        app:layout_constraintBottom_toBottomOf="@id/cbBottom"
+        app:layout_constraintEnd_toStartOf="@id/barrierBasic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cbStart">
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvT"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/teal_200" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierBasic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="cbBottom,cbEnd,cbStart,cbTop" />
+
+    <CheckBox
+        android:id="@+id/cbStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        app:layout_constraintBottom_toTopOf="@id/cbEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/basic" />
+
+    <CheckBox
+        android:id="@+id/cbEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/end"
+        app:layout_constraintBottom_toTopOf="@id/cbTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbStart" />
+
+    <CheckBox
+        android:id="@+id/cbTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top"
+        app:layout_constraintBottom_toTopOf="@id/cbBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbEnd" />
+
+    <CheckBox
+        android:id="@+id/cbBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbTop" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

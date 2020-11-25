@@ -1,0 +1,13 @@
+include ':io'
+include ':plugin'
+include ':multimudule'
+include ':customview'
+include ':motionlayout'
+include ':openrepolearning'
+include ':app'
+rootProject.name = "Learn2020"
+include ':recyclerview'
+include ':okhttp'
+include ':bluetooth'
+include ':backgroundlaunch'
+include ':contacts'

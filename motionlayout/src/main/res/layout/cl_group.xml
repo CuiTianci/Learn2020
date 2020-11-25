@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clGroupShell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <br.tiagohm.markdownview.MarkdownView
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--主体部分，外层为辅助-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clGroup"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#33F6F205"
+        app:layout_constraintTop_toBottomOf="@id/group">
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvT"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/teal_200"
+
+            app:layout_constraintStart_toEndOf="@id/mvB"
+            app:layout_constraintTop_toBottomOf="@id/mvB" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvA"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvB"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:id="@+id/mvC"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="mvA,mvB,mvC" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swInvisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swGone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

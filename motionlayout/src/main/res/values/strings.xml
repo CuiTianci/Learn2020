@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MotionLayout</string>
+    <string name="start">start</string>
+    <string name="end">end</string>
+    <string name="top">top</string>
+    <string name="bottom">bottom</string>
+    <string name="parent">Parent</string>
+    <string name="reverse">Reverse</string>
+    <string name="vertical">Vertical</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="spread">Spread</string>
+    <string name="spreadInside">SpreadInside</string>
+    <string name="packed">Packed</string>
+    <string name="width_of_a">Width Of A</string>
+    <string name="invisible">INVISIBLE</string>
+    <string name="gone">GONE</string>
+    <string name="radius">Radius</string>
+    <string name="angle">Angle</string>
+</resources>
