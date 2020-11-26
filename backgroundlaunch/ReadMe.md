@@ -36,8 +36,8 @@
 ### 判断是否具备后台启动Activity的条件
 - 常规设备：
 ```js
-   fun isCommonDevicePermissionGranted(context: Context) =
-    Build.VERSION.SDK_INT < Build.VERSION_CODES.Q || Settings.canDrawOverlays(context)
+private fun isCommonDevicePermissionGranted(context: Context) =
+        !isMi() && (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q || Settings.canDrawOverlays(context))
 ```    
 - 小米设备：
 ```js
@@ -163,10 +163,12 @@ private fun toAccessibilityServiceSettings() {
 ```
 - 备注：每次安装AccessibilityService都会被关闭（包括覆盖安装）。
 ## 满足限制条件第7点：应用中的某个服务受另一个可见应用约束。
-通过[AIDL](https://developer.android.google.cn/guide/components/aidl?hl=zh_cn)将B应用绑定到A应用的服务上，当B应用可见时，A应用可以从后台启动Activity，可参考文章末尾提供的Demo。当然，这种方式虽然可行，但显然十分不实用。
+通过[AIDL](https://developer.android.google.cn/guide/components/aidl?hl=zh_cn)将B应用绑定到A应用的服务上，当B应用可见时，A应用可以从后台启动Activity，可参考文章末尾提供的Demo(BackgroundLaunch模块对应A应用，Contact模块对应B应用)。当然，这种方式虽然可行，但显然十分不实用。
 # 总结
 虽然文章开头给出的后台启动Activity的条件有很多，但绝大部分条件都比较苛刻，不太实用。  
 应用具有如AccessibilityService等受系统约束的服务尚能解决问题，但这些Service会在应用覆盖安装甚至杀死进程时关闭，这种方案又显得差强人意；授权SYSTEM_ALERT_WINDOW可以说是其中最靠谱的方案了，但也只是相对而言，毕竟没办法保证跳转系统设置中授权的成功转化率。对于Android10.0以上的手机（小米手机特殊处理），以上两种方式虽然都有各自的不足，但可以说是唯二的后台启动Activity的可靠解决方案了。  
 如若没有十分必要直接启动页面的话，推荐使用FullScreenIntent的方式，以带来更好的用户体验。
 # Demo
-[Github](https://github.com/CuiTianci/Learn2020/tree/master/backgroundlaunch)
+ - [项目地址](https://github.com/CuiTianci/Learn2020/tree/master/backgroundlaunch)  
+
+ - [工具类](https://github.com/CuiTianci/Learn2020/blob/master/backgroundlaunch/src/main/java/com/example/backgroundlaunch/BackgroundLaunchPermissionUtil.kt)
