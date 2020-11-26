@@ -25,11 +25,13 @@
     2. 锁屏状态下，Activity会立即启动。
 ### 特殊情况
 #### 小米设备
-    对于小米手机，无关乎Android版本，均需要授予"后台弹出界面"权限。
+    小米设备中有这样两个权限：Start in Background和Display pop-up window。  在不同系统版本上有可能存在差异。
+    但至少存在Start in Background权限，且至少取得Start in background权限，应用才能从后台启动页面。
+    虽然在不同版本上，权限并不一致（可能存在权限数量不同和必须授予的权限不同），但好在无论哪种情况，小米给出的Api都能够对此进行统一判断。
 ## 权限申请
 ### 通常做法
 - 常规设备(Android10及以上)通常通过申请授予SYSTEM_ALERT_WINDOW权限，获得后台启动Activity的能力。
-- 小米设备（无关Android版本）需要申请授予"后台弹出界面"权限。
+- 小米设备（无关Android版本）需要授予Start in Background和Display pop-up window权限。
 
 ### 判断是否具备后台启动Activity的条件
 - 常规设备：
@@ -163,4 +165,8 @@ private fun toAccessibilityServiceSettings() {
 ## 满足限制条件第7点：应用中的某个服务受另一个可见应用约束。
 通过[AIDL](https://developer.android.google.cn/guide/components/aidl?hl=zh_cn)将B应用绑定到A应用的服务上，当B应用可见时，A应用可以从后台启动Activity，可参考文章末尾提供的Demo。当然，这种方式虽然可行，但显然十分不实用。
 # 总结
-虽然文章开头给出的后台启动Activity的条件有很多，但绝大部分条件都比较苛刻，不太实用。第六点，应用具有如AccessibilityService等受系统约束的服务尚能解决问题，但这些Service会在应用覆盖安装甚至杀死进程时关闭，这种方案又显得差强人意；授权SYSTEM_ALERT_WINDOW可以说是其中最靠谱的方案了，但也只是相对而言，毕竟没办法保证跳转系统设置中授权的成功转化率。对于Android10.0以上的手机（小米手机无论版本，都需要StartInBackground权限），以上两种方式虽然都有各自的不足，但可以说是唯二的后台启动Activity的可靠解决方案了。如若没有十分必要直接启动Activity的话，推荐使用FullScreenIntent的方式，以带来更好的用户体验。
+虽然文章开头给出的后台启动Activity的条件有很多，但绝大部分条件都比较苛刻，不太实用。  
+应用具有如AccessibilityService等受系统约束的服务尚能解决问题，但这些Service会在应用覆盖安装甚至杀死进程时关闭，这种方案又显得差强人意；授权SYSTEM_ALERT_WINDOW可以说是其中最靠谱的方案了，但也只是相对而言，毕竟没办法保证跳转系统设置中授权的成功转化率。对于Android10.0以上的手机（小米手机特殊处理），以上两种方式虽然都有各自的不足，但可以说是唯二的后台启动Activity的可靠解决方案了。  
+如若没有十分必要直接启动页面的话，推荐使用FullScreenIntent的方式，以带来更好的用户体验。
+# Demo
+[Github](https://github.com/CuiTianci/Learn2020/tree/master/backgroundlaunch)

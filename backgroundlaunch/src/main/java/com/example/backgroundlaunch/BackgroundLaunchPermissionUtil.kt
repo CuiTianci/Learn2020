@@ -18,7 +18,7 @@ import java.lang.reflect.Method
  * <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
  * 官方文档总介绍了其他特殊情况：
  * 小米手机：
- * 在系统中存在一个特殊权限：后台弹出页面权限。
+ * 在系统中存在一个特殊权限：Start in background\Display pop-up window。
  * 小米手机（无论Android及MIUI版本）能否后台启动Activity取决于上述权限。
  * 官方文档说明：https://dev.mi.com/console/doc/detail?pId=1735
  */
@@ -36,7 +36,7 @@ class BackgroundLaunchPermissionUtil {
          * 常规设备判断条件：API29以下不需权限。API29及以上需要OverLay权限。
          */
         private fun isCommonDevicePermissionGranted(context: Context) =
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.Q || Settings.canDrawOverlays(context)
+            !isMi() && (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q || Settings.canDrawOverlays(context))
 
         /**
          * 打开系统授权页。
@@ -95,6 +95,7 @@ class BackgroundLaunchPermissionUtil {
 
         /**
          * 小米手机权限单独判断。
+         * Start in background\Display pop-up window
          */
         private fun isMiPermissionGranted(context: Context): Boolean {
             if (!isMi()) return false

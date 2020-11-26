@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListeners() {
         fun toastCanStartInBackground(hasPermission: Boolean) {
-            (if (hasPermission) "Permission for launching from background have been granted." else "Permission for launching from background hasn't not been granted.").toast(
+            (if (hasPermission) "Permission for launching from background has been granted." else "Permission for launching from background hasn't been granted.").toast(
                 this)
         }
         testPermission.setOnClickListener {
